@@ -1,25 +1,24 @@
 //findCommon([1, 3, 33, 8], [76, 8, 13, 54])
 
 function findingCommonNumbers(inputArray){
-    let finalArray = [];
-    let firstSubArray = inputArray[0];
-    let secondSubArray = inputArray[1];
-
     if ( !Array.isArray(inputArray)
         || inputArray.length !==2 
         || !Array.isArray(firstSubArray)
         || !Array.isArray(secondSubArray)
     ) 
+    let finalArray = [];
+    let firstSubArray = inputArray[0];
+    let secondSubArray = inputArray[1];
      {
         console.log(" Entered Input is Not Valid!!");
         return finalArray;
     }
 
     for (let i = 0 ; i< firstSubArray.length ; i++ ){
-        let firstArrayValue = firstSubArray[i];
+        firstArrayValue = firstSubArray[i];
 
         for (let j = 0 ; j < secondSubArray.length ; j++ ){
-            let secondArrayValue = secondSubArray[j];
+            secondArrayValue = secondSubArray[j];
 
             if ( firstArrayValue === secondArrayValue){
                 let repeatedValue = false;
