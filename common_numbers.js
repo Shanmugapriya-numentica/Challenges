@@ -1,44 +1,51 @@
-//findCommon([1, 3, 33, 8], [76, 8, 13, 54])
-
 function findingCommonNumbers(inputArray){
-    if ( !Array.isArray(inputArray)
-        || inputArray.length !==2 
-        || !Array.isArray(firstSubArray)
-        || !Array.isArray(secondSubArray)
-    ) 
     let finalArray = [];
     let firstSubArray = inputArray[0];
     let secondSubArray = inputArray[1];
+
+    if ( inputArray.length !==2  || !Array.isArray(firstSubArray) || !Array.isArray(secondSubArray)
+    ) 
      {
         console.log(" Entered Input is Not Valid!!");
         return finalArray;
     }
 
     for (let i = 0 ; i< firstSubArray.length ; i++ ){
-        firstArrayValue = firstSubArray[i];
 
+        if (typeof firstSubArray[i] !== 'number' ) {
+            console.log("Array should only contain numbers");
+            return "Input Invalid";
+        }
+
+        let firstArrayValue = firstSubArray[i];
         for (let j = 0 ; j < secondSubArray.length ; j++ ){
-            secondArrayValue = secondSubArray[j];
+            let secondArrayValue = secondSubArray[j];
+            
+            if( typeof secondSubArray[j] !== 'number'){
+                return 'invalid'
+            }
 
             if ( firstArrayValue === secondArrayValue){
-                let repeatedValue = false;
-                
-                for (let k = 0 ; k < finalArray.length ; k++ ){      //to not to repeat values in new array
+                let isRepeatedValue = false;
+
+                for (let k = 0 ; k < finalArray.length ; k++){
                     if (finalArray[k] === firstArrayValue){
-                        repeatedValue = true;
-                        break ; 
+                        isRepeatedValue = true;
+                        break;
                     }
-                } 
-                if (repeatedValue = true){
+                }
+                if (!isRepeatedValue) {
                     finalArray.push(firstArrayValue);
                 }
-            } 
+            }       
         }
     }
 return finalArray
 
 }
 
-// console.log("The Elements are: ",findingCommonNumbers([[1,2,3,6,4],[3,5,6,7,8]]))
-
-console.log(findingCommonNumbers([[1,2,3,6,4],"hi"]))
+// console.log("Common Elements are: ",findingCommonNumbers([[12,3,60,4,7,50,8,89],[7,50,4,8]]))
+// console.log(findingCommonNumbers([[1,2,3,6,4],"hi"]))
+// console.log(findingCommonNumbers([[1, 3, 33, 8], [6,7,90,33, 8]]))
+// console.log(findingCommonNumbers([["a","b","c","d"], ["a",'c']]));
+console.log(findingCommonNumbers([[1,2,3,6,4,4,5,2],[1,5,5, 3, 4]]));
