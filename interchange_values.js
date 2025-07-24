@@ -31,9 +31,9 @@ function interChangeValuesInArray(userInput){
 
 
 console.log(interChangeValuesInArray([[1, 2, 3, 4, 5], 2]));
-console.log(interChangeValuesInArray([[1, 2, 3, 4, 5], 5]));
-console.log(interChangeValuesInArray([[1, 2, 3, 4, 5], 0]));
-console.log(interChangeValuesInArray([[1, 2, 3, 4, 5], "hi"]));
-console.log(interChangeValuesInArray(["Hello", 6]));
-console.log(interChangeValuesInArray([3, 6]));
-console.log(interChangeValuesInArray(["", ""]));
+//console.log(interChangeValuesInArray([[1, 2, 3, 4, 5], 5]));
+//console.log(interChangeValuesInArray([[1, 2, 3, 4, 5], 0]));
+//console.log(interChangeValuesInArray([[1, 2, 3, 4, 5], "hi"]));
+//console.log(interChangeValuesInArray(["Hello", 6]));
+//console.log(interChangeValuesInArray([3, 6]));
+//console.log(interChangeValuesInArray(["", ""]));
