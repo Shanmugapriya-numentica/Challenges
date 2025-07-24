@@ -1,6 +1,9 @@
 //	fox i  n the b ox  
 function removeSpaces(userInput){
-    if ( typeof userInput == 'string'){
+    if ( typeof userInput !== 'string'){
+    return "Sorry!, Input is Invalid!!";
+}
+    
     let newWord ='';
 
     for (let i=0 ; i < userInput.length; i++ ){  
@@ -9,16 +12,13 @@ function removeSpaces(userInput){
                 newWord = newWord + userInput[i];                                  
             }            
     }
-console.log("Answer is :",newWord);
+
+    return '"'+newWord+'"';
+
 }
-else{
-    console.log("Sorry!, Input is Invalid!!");
-    
-}}
 
-
-//removeSpaces("   fox i  n the b ox")
-// removeSpaces(92892384)
-// removeSpaces("9656 yy y7 878")
-//removeSpaces(NaN)
-removeSpaces(-7676)
+console.log(removeSpaces("   fox i  n the b ox"))
+// console.log(removeSpaces(92892384));
+// console.log(removeSpaces("9656 yy y7 878"))
+// console.log(removeSpaces(NaN))
+// console.log(removeSpaces(-7676))
