@@ -1,8 +1,8 @@
 // console.log(replaceWithNumbers("abc@123","d"))
-function replaceNumbers( inputString, chartoChange){
+function replaceNumbers( inputString, charToChange){
 
-    if (typeof inputString !== 'string' || typeof chartoChange !== 'string' 
-        || inputString.length === 0 || chartoChange.length === 0
+    if (typeof inputString !== 'string' || typeof charToChange !== 'string' 
+        || inputString.length === 0 || charToChange.length === 0
         || arguments.length !== 2) {
 
         return "Input you've entered is invalid!"
@@ -15,7 +15,7 @@ function replaceNumbers( inputString, chartoChange){
         let currentValue = inputString[i];
 
         if( currentValue >='0' && currentValue <='9'){
-            newResult += chartoChange;
+            newResult += charToChange;
             isNumbersPresent = true;
 
         }else{
