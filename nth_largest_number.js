@@ -1,8 +1,8 @@
 
-function findNthLargest(userInputArray, NthLargest){
+function findNthLargest(userInputArray, requiredLargest){
 
-    if( !Array.isArray(userInputArray) || typeof NthLargest !=='number' || 
-        arguments.length !== 2 || userInputArray.length < NthLargest){
+    if( !Array.isArray(userInputArray) || typeof requiredLargest !=='number' || 
+        arguments.length !== 2 || userInputArray.length < requiredLargest || requiredLargest === 0){
             return "Entered Input is Invalid" ;
         }
 
@@ -19,12 +19,14 @@ function findNthLargest(userInputArray, NthLargest){
             }
         }
     }
-    return NthLargest+ "The Number is: " + newArray[NthLargest - 1] ;
+    return "Your "+ requiredLargest + " Largest Number is: " + newArray[ requiredLargest - 1] ;
 }
 
-// console.log(findNthLargest([10,30,50,90],3))
+console.log(findNthLargest([10,30,50,90],3))
 // console.log(findNthLargest(null,9))
 // console.log(findNthLargest([23,34,12],1,2))
 // console.log(findNthLargest("hello","good morning"))
 // console.log(findNthLargest(undefined,23))
 // console.log(findNthLargest(1233332,9))
+
+// console.log(findNthLargest([10,30,50,90],0))
