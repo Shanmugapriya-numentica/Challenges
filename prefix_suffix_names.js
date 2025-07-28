@@ -1,34 +1,33 @@
 
 
-function addPrefixOrSuffix(userInputs) {
+function addPrefixOrSuffix(inputName, preOrSuffix, whereToJoin) {
 
-    if (!Array.isArray(userInputs) || userInputs.length !== 3) {
-            return "Input INvalid";}
-
-    const [inputName, preOrSuffix, whereToJoin] = userInputs;
         
-    if ( typeof inputName !== 'string' || typeof preOrSuffix !== 'string' || typeof whereToJoin !== 'string') {
+    if ( typeof inputName !== 'string' || typeof preOrSuffix !== 'string' 
+        || typeof whereToJoin !== 'string') {
         return "Input Invalid";
     }
 
-    if (whereToJoin.toLowerCase() == "prefix") {
+    if ( typeof whereToJoin.toLowerCase() !== 'prefix' 
+            && typeof whereToJoin.toUpperCase() !== 'string'){
+                return "Input Invalid!"
+            }
 
-        let nameParts = inputName.split(' ').map(word =>
+     let nameParts = inputName.split(' ').map(word =>
         word.charAt(0).toUpperCase() + word.slice(1).toLowerCase());
-        let nameOfPerson = nameParts.join(' ');   
+        let nameOfPerson = nameParts.join(' ');  
+         
+
+
+    if (whereToJoin.toLowerCase() == "prefix") {
 
         let prefixToLower = preOrSuffix.toLowerCase();
         let prefixName = prefixToLower[0].toUpperCase() + prefixToLower.slice(1);
-        //  console.log(prefixName + " " + nameOfPerson);
 
         return prefixName + " " + nameOfPerson;
     }
 
     if (whereToJoin.toLowerCase() == "suffix") {
-          
-        let nameParts = inputName.split(' ').map(word =>
-        word.charAt(0).toUpperCase() + word.slice(1).toLowerCase());
-        let nameOfPerson = nameParts.join(' '); 
 
         let suffixToLower = preOrSuffix.toLowerCase();
         let suffixName = suffixToLower[0].toUpperCase() + suffixToLower.slice(1);
@@ -38,6 +37,7 @@ function addPrefixOrSuffix(userInputs) {
 
 }
 
-console.log(addPrefixOrSuffix(["vijay kumar", "mr", "PReFIX"]))
-console.log(addPrefixOrSuffix(["jhon durairaj", "jr", "suffix"]))
+console.log(addPrefixOrSuffix("vijay kumar", "mr", "PReFIX"))
+console.log(addPrefixOrSuffix("jhon durairaj", "jr", "suffix"))
 // console.log(addPrefixOrSuffix(["hello","hello"]))
+
