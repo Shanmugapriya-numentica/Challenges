@@ -1,8 +1,8 @@
 
-function replaceWithSpecialValue( InputString, position, wordToBeReplaced){
+function replaceWithSpecialValue( InputString, position, charToChange){
 
     if ( typeof InputString !== 'string' || typeof position !== 'string' 
-        || typeof wordToBeReplaced !== 'string' || arguments.length !==3 ){
+        || typeof charToChange !== 'string' || arguments.length !==3 ){
             return "Input Invalid" ;
         }
 
@@ -10,7 +10,7 @@ function replaceWithSpecialValue( InputString, position, wordToBeReplaced){
 
     for (let i = 0 ; i < word.length -1 ; i++ ){
         if ( word[i] === position){
-            word [ i + 1] = wordToBeReplaced ;
+            word [ i + 1] = charToChange ;
         }
     }
     return word.join('') ;
