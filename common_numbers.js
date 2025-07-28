@@ -1,9 +1,8 @@
-function findingCommonNumbers(inputArray){
+function findingCommonNumbers(firstSubArray,secondSubArray){
     let finalArray = [];
-    let firstSubArray = inputArray[0];
-    let secondSubArray = inputArray[1];
 
-    if ( inputArray.length !==2  || !Array.isArray(firstSubArray) || !Array.isArray(secondSubArray)
+    if ( arguments.length !==2  || !Array.isArray(firstSubArray) 
+        || !Array.isArray(secondSubArray)
     ) 
      {
         console.log(" Entered Input is Not Valid!!");
@@ -44,8 +43,8 @@ return finalArray
 
 }
 
-// console.log("Common Elements are: ",findingCommonNumbers([[12,3,60,4,7,50,8,89],[7,50,4,8]]))
-// console.log(findingCommonNumbers([[1,2,3,6,4],"hi"]))
-// console.log(findingCommonNumbers([[1, 3, 33, 8], [6,7,90,33, 8]]))
-// console.log(findingCommonNumbers([["a","b","c","d"], ["a",'c']]));
-console.log(findingCommonNumbers([[1,2,3,6,4,4,5,2],[1,5,5, 3, 4]]));
+// console.log("Common Elements are: ",findingCommonNumbers([12,3,60,4,7,50,8,89],[7,50,4,8]))
+// console.log(findingCommonNumbers([1,2,3,6,4],"hi"))
+// console.log(findingCommonNumbers([1, 3, 33, 8], [6,7,90,33, 8]))
+// console.log(findingCommonNumbers(["a","b","c","d"], ["a",'c']));
+console.log(findingCommonNumbers([1,2,3,6,4,4,5,2],[1,5,5, 3, 4]));
