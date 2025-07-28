@@ -8,7 +8,7 @@ function replaceNumbers( inputString, charToChange){
         return "Input you've entered is invalid!"
     }
 
-    let newResult = '';
+    let result = '';
     let isNumbersPresent = false;
 
     for (let i =0; i < inputString.length; i++){
@@ -19,14 +19,14 @@ function replaceNumbers( inputString, charToChange){
             isNumbersPresent = true;
 
         }else{
-            newResult += currentValue;
+            result += currentValue;
         }        
 
     }
     if (isNumbersPresent === false){  
             return "There are no numbers in the string to replace!. It remains same as: " + '"'+inputString+'"' ;
         }
-return newResult;
+return result;
 
 }
 
