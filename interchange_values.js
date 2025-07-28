@@ -1,28 +1,27 @@
 
-function interChangeValuesInArray(userInput){
-    if (!Array.isArray(userInput) || userInput.length !== 2 ) {
+function interChangeValuesInArray(subArray,indexValue){
+    if (!Array.isArray(subArray) || arguments.length !== 2
+        || typeof indexValue !== 'number' ) {
         return "Input Should Conatin Array and Element";
     }
 
-    let subArray = userInput[0];
-    let valueToBeChanged = userInput[1];
-
-    if (!Array.isArray(subArray) || subArray.length === 0 || typeof valueToBeChanged !== 'number' || !Number) {
+    if (!Array.isArray(subArray) || subArray.length === 0 || 
+        typeof indexValue !== 'number' || !Number) {
         return "Input Invalid, Please Enter Valid Input";
     }
 
-    if (valueToBeChanged < 1 || valueToBeChanged > subArray.length) {
+    if (indexValue < 1 || indexValue > subArray.length) {
         return "Not a Valid Input";
     }
 
     let newArray = subArray.slice();
 
-    if (valueToBeChanged === subArray.length) {
+    if (indexValue === subArray.length) {
         [newArray[0], newArray[subArray.length - 1]] = [newArray[subArray.length - 1], newArray[0]];    
        
     }
     else {
-        [newArray[valueToBeChanged - 1], newArray[valueToBeChanged]] = [newArray[valueToBeChanged], newArray[valueToBeChanged - 1]];
+        [newArray[indexValue - 1], newArray[indexValue]] = [newArray[indexValue], newArray[indexValue - 1]];
     }
 
     return newArray;
@@ -30,10 +29,10 @@ function interChangeValuesInArray(userInput){
 }
 
 
-console.log(interChangeValuesInArray([[1, 2, 3, 4, 5], 2]));
-//console.log(interChangeValuesInArray([[1, 2, 3, 4, 5], 5]));
-//console.log(interChangeValuesInArray([[1, 2, 3, 4, 5], 0]));
-//console.log(interChangeValuesInArray([[1, 2, 3, 4, 5], "hi"]));
-//console.log(interChangeValuesInArray(["Hello", 6]));
-//console.log(interChangeValuesInArray([3, 6]));
-//console.log(interChangeValuesInArray(["", ""]));
+console.log(interChangeValuesInArray([1, 2, 3, 4, 5], 2));
+console.log(interChangeValuesInArray([1, 2, 3, 4, 5], 5));
+console.log(interChangeValuesInArray([1, 2, 3, 4, 5], 0));
+console.log(interChangeValuesInArray([1, 2, 3, 4, 5], "hi"));
+console.log(interChangeValuesInArray("Hello", 6));
+console.log(interChangeValuesInArray(3, 6));
+console.log(interChangeValuesInArray("", ""));
