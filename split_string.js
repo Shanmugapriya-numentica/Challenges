@@ -19,7 +19,7 @@ function stringSplit(userInputArray, indexCounts) {
 
     for (let i = 0; i < newUserInputArray.length; i++) {
         newArray.push(newUserInputArray.slice(i, i + indexCounts));
-        i = i + indexCounts;
+        i = i + indexCounts -1;
 
     }
 
