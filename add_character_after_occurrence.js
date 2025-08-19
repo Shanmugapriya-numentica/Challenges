@@ -1,33 +1,36 @@
-// Add "@" after each occurrence of character "c" in a string
-// Input: "cat in the bag"
-// Output: "c@at in the bag"
 
-function addAfterOccurrence(userInputString, position, char) {
+function addAfterOccurrence(userInputString, occurrenceLetter, charToAdd) {
 
-    if (typeof userInputString !== 'string' || typeof position !== 'string' || typeof char !== 'string') {
-        return "Input Invalid"
+    if (typeof userInputString !== 'string'
+        || typeof occurrenceLetter !== 'string'
+        || typeof charToAdd !== 'string') {
+
+        return "Input Invalid";
     }
 
     let result = '';
-    let isPresent = true;
+    let isPresent = false;
+    let matchingLetter = occurrenceLetter.toLowerCase();
 
     for (let i = 0; i < userInputString.length; i++) {
 
         result += userInputString[i];
 
-        if (userInputString[i].toLowerCase() === position.toLowerCase()) {
-            result += char;
-            isPresent = false;
+        if (userInputString[i].toLowerCase() === matchingLetter) {
+            result += charToAdd
+
+            isPresent = true;
         }
     }
-    if (isPresent) {
-        return "Sorry!, There is no " + '"' + position + '"' + " in " + userInputString + '!';
+    if (!isPresent) {
+        return "There is no letter " + occurrenceLetter + " in your input!";
     }
-    return result;
-
+    else {
+        return result;
+    }
 }
 
-// console.log(addAfterOccurrence("cat in the bag, clock", "C", "@"))
+console.log(addAfterOccurrence("cat in the bag, clock", "c", "@"))
 // console.log(addAfterOccurrence("hello", "b", '@'))
 // console.log(addAfterOccurrence("cat in the bag, clock", "a", "#"))
 // console.log(addAfterOccurrence(["cat"], "C", "@"))
