@@ -10,9 +10,10 @@ fetch('https://jsonplaceholder.typicode.com/todos/1')
     }
     return res.json();  
   })
-  .then(datas => {
-    console.log(datas);  
+  .then(data => {
+    console.log(data);  
   })
   .catch(error => {
     console.error('Fetch error:', error);
   });
+
