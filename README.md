@@ -1,2 +1,2 @@
 # Challenges
-daily problems
+day_2_Problems of javascript.
